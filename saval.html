@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://example.com/romantic-background.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        #buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: rgba(255, 0, 0, 0.7);
+            color: white;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        button:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
+        #message {
+            display: none;
+            font-size: 30px;
+            color: #ff69b4;
+            margin-top: 20px;
+        }
+        #image {
+            display: none;
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+
+    <div id="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <div id="message">
+        <p>You're my Valentine forever! 💖</p>
+    </div>
+
+    <img id="image" src="https://example.com/romantic-image.jpg" alt="Romantic Picture">
+
+    <script>
+        const noButton = document.getElementById('no');
+        const yesButton = document.getElementById('yes');
+        const message = document.getElementById('message');
+        const image = document.getElementById('image');
+
+        // When "No" is clicked, move it randomly
+        noButton.addEventListener('click', function() {
+            const randomX = Math.random() * 300 - 150;
+            const randomY = Math.random() * 300 - 150;
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+
+        // When "Yes" is clicked, display the message and image
+        yesButton.addEventListener('click', function() {
+            // Hide the buttons
+            yesButton.style.display = 'none';
+            noButton.style.display = 'none';
+
+            // Show the beautiful message and image
+            message.style.display = 'block';
+            image.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
